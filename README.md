@@ -7,6 +7,7 @@ to the top of the Recent Observations pages,such as this one for [Adelaide](http
 It's mostly because I really wanted to have this, but it's been also a useful exercice for starting d3
 
 There are a number of updates I'd like to do - 
+
 -1 make it look a bit nicer (maybe feint lines in the background to 
 help with seeing the values?). 
 -2 at the moment it uses svg:title to do simple pop-ups on mouseover for specific values
