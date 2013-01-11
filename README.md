@@ -8,12 +8,13 @@ It's mostly because I really wanted to have this, but it's been also a useful ex
 
 There are a number of updates I'd like to do - 
 
--1 make it look a bit nicer (maybe feint lines in the background to 
+ - 1 make it look a bit nicer (maybe feint lines in the background to 
 help with seeing the values?). 
--2 at the moment it uses svg:title to do simple pop-ups on mouseover for specific values
+ - 2 at the moment it uses svg:title to do simple pop-ups on mouseover for specific values
 so I'd like to update that to use jquery and tipsy instead
--3 I've got the time converting to a date format but I can't work out how to actually use that in a practical way so 
+ - 3 I've got the time converting to a date format but I can't work out how to actually use that in a practical way so 
 work out something to do with that
--4 I also want to just tidy it up somewhat - I think I've needlessly reproduced things
+ - 4 I also want to just tidy it up somewhat - I think I've needlessly reproduced things
+ - 5 and then after that try and work out if it's possible (and easy) to import details like the forecasted max and min from other pages. I think that'd be too difficult to do as the forecast URLs have a different code in them for each place than the observations but I'll give it a go...
 
 But it works perfectly fine at the moment!
