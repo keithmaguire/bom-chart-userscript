@@ -171,6 +171,10 @@ svgContainer.append("g")
             .text("%");
 
 //the lines
+var last_temp_y = y1(obsData[lengthofdata - 1].tmp);
+var last_humidity_y = y2(obsData[lengthofdata - 1].relhum);
+console.log("last_temp_y: "+ last_temp_y);
+console.log("last_humidity_y: "+ last_humidity_y);    
 
 //prepares the humidity line
 var lineFunction = d3.svg.line()
@@ -202,18 +206,7 @@ g.selectAll("humidcircle")
             + d.time
            });
           
-//adds the humidity onto the final value
-g.selectAll("finalhumid")
-          .data(obsData)
-          .enter()
-          .append("svg:text")
-          .attr("x", x(lengthofdata-1) )
-          .attr("y", y2(obsData[lengthofdata - 1].relhum))
-          .attr("font-family", "serif")
-          .attr("font-size", "14px")
-          .attr("dy", "0.25em")
-          .attr("fill","blue")
-          .text(obsData[lengthofdata - 1].relhum + "%");
+
 
 //prepares the temperature line
 var lineFunction = d3.svg.line()
@@ -245,15 +238,90 @@ g.selectAll("tempcircle")
             + d.time
           });
 
+ 
+                
+var midpoint = 0.5*(last_temp_y + last_humidity_y);
+var last_time = obsData[lengthofdata - 1].time;
+g.selectAll("values_label")
+            .data(obsData)
+            .enter()
+            .append("svg:text")
+            .attr("x", x(lengthofdata-1) )
+            .attr("y", midpoint)
+            .attr("font-family", "sans-serif")
+            .attr("font-size", "14px")
+            .attr("dy", "0.25em")
+            .text(last_time);
+var topvalue,bottomvalue,topcolour,bottomcolour;
+//if the values are too close together to be displayed neatly just display them
+//above and below the date
+if ( midpoint - last_temp_y > 20)
+    {
+    console.log("not lesser")
+//adds the humidity onto the final value
+g.selectAll("finalhumid")
+          .data(obsData)
+          .enter()
+          .append("svg:text")
+          .attr("x", x(lengthofdata-1) )
+          .attr("y", last_humidity_y)
+          .attr("font-family", "sans-serif")
+          .attr("font-size", "14px")
+          .attr("dy", "0.25em")
+          .attr("fill","blue")
+          .text(obsData[lengthofdata - 1].relhum + "%");
 //adds the temperature onto the final value
 g.selectAll("finaltemperature")
           .data(obsData)
           .enter()
           .append("svg:text")
           .attr("x", x(lengthofdata-1) )
-          .attr("y", y1(obsData[lengthofdata - 1].tmp))
-          .attr("font-family", "serif")
+          .attr("y", last_temp_y)
+          .attr("font-family", "sans-serif")
           .attr("font-size", "14px")
           .attr("dy", "0.25em")
           .attr("fill","red")
-          .text(obsData[lengthofdata - 1].tmp + "°");        
+          .text(obsData[lengthofdata - 1].tmp + "°"); 
+}
+//This looks roundybout because the origin in d3 is at the top left
+// therefor the y values are actually calculated from the top, so a higher 
+// number actually means closer to the bottom
+  else 
+{ console.log("lesser")
+    if (last_temp_y < last_humidity_y)
+    {
+    topvalue = obsData[lengthofdata - 1].tmp + "°",
+    bottomvalue = obsData[lengthofdata - 1].relhum + "%",
+    topcolour = "red",
+    bottomcolour = "blue"
+    }
+  else
+    {
+    topvalue = obsData[lengthofdata - 1].relhum + "%",
+    bottomvalue = obsData[lengthofdata - 1].tmp + "°",
+    topcolour = "blue",
+    bottomcolour = "red"    
+    };
+g.selectAll("values_label")
+            .data(obsData)
+            .enter()
+            .append("svg:text")
+            .attr("x", x(lengthofdata-1) )
+            .attr("y", midpoint - 20)
+            .attr("font-family", "sans-serif")
+            .attr("font-size", "14px")
+            .attr("dy", "0.25em")
+            .attr("fill",topcolour)
+            .text(topvalue);
+g.selectAll("values_label")
+            .data(obsData)
+            .enter()
+            .append("svg:text")
+            .attr("x", x(lengthofdata-1) )
+            .attr("y", midpoint + 20)
+            .attr("font-family", "sans-serif")
+            .attr("font-size", "14px")
+            .attr("dy", "0.25em")
+            .attr("fill",bottomcolour)
+            .text(bottomvalue);
+};
