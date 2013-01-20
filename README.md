@@ -11,7 +11,7 @@ From
 
 to (as it stands at the moment)
 
-![screen with graph added](after_json_script.png)
+![screen with graph added](https://raw.github.com/keithmaguire/bom-chart-userscript/master/img/after_json_script.png)
 
 There are two here - the first one uses the data as presented in the tables on the page, the second one uses the data from a linked json file.
 
