@@ -1,0 +1,2 @@
+# hopefully this will make git ignore vim temporary files
+*~
