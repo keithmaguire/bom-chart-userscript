@@ -7,7 +7,7 @@ to the top of the Recent Observations pages,such as this one for [Adelaide](http
 From
 
 
-![screen before](keithmaguire.github.com/bom-chart-userscript/before_script.png)
+![screen before](https://keithmaguire.github.com/bom-chart-userscript/img/before_script.png)
 
 to (as it stands at the moment)
 
