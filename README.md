@@ -21,13 +21,13 @@ It's mostly because I really wanted to have this, but it's been also a useful ex
 
 There are a number of updates I'd like to do - 
 
- 1. make it look a bit nicer (maybe feint lines in the background to 
-help with seeing the values?). 
+ 1. make it look a bit nicer - add a bit of shading over the portions that are the night and maybe faint lines in the background to 
+help with seeing the values? 
  2. at the moment it uses svg:title to do simple pop-ups on mouseover for specific values
 so I'd like to update that to use jquery and tipsy instead
- 3. I also want to just tidy it up somewhat - I think I've needlessly reproduced things
+ 3. I also want to just tidy it up somewhat - I think I've needlessly reproduced things. This includes separating out the CSS, probably using Greasemonkey to add the different classes to the pages HEAD
  4. and then after that try and work out if it's possible (and easy) to import details like the forecasted max and min from other pages. I think that'd be too difficult to do as the forecast URLs have a different code in them for each place than the observations but I'll give it a go...I've gotten the potential forecast page URLs out in the code, but they're not all there so not sure what to do with that
  5. I'd like it to default to showing a day but be easy to zoom out to show the 72hour view
- 6. I'd like to add a bit of shading over the portions that are the night
+
 
 But it works perfectly fine at the moment!
