@@ -231,6 +231,13 @@ d3.select("h1").append("text")
             + obsData[lengthofdata - 1].rel_hum + "%"
             + " humidity");
 
+//Change page title
+document.title = town_titlecase +
+            ", " 
+            + last_time +": "
+            + obsData[lengthofdata - 1].air_temp + "°C," 
+            + obsData[lengthofdata - 1].rel_hum + "%";
+
             
 var topvalue,bottomvalue,topcolour,bottomcolour;
 //if the values are too close together to be displayed neatly just display them
