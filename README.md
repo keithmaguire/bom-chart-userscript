@@ -15,9 +15,9 @@ to (as it stands at the moment)
 
 ![screen with graph added](https://raw.github.com/keithmaguire/bom-chart-userscript/master/img/after_json_script.png)
 
-The red line is for Temperature, the Blue line is for Humidity and the dashed Red line is for Apparent temperature.  If you hover over either of the two main lines you'll get the value at that point. I've not done the same to the Apparent Temperature because to be honest I only really included it to combat panic when the temperature gets over 40° - you can tell yourself well it should only *feel* like 38°!
+The red line is for Temperature, the Blue line is for Humidity and the dashed Red line is for Apparent temperature.  If you hover over either of the two main lines you'll get the value at that point. I've not done the same to the Apparent Temperature line because I only included it to combat panic when the temperature gets over 40° - you can tell yourself well it should only *feel* like around 38°
 
-There are two here - the first one uses the data as presented in the tables on the page, the second one uses the data from a linked json file.
+There are two userscripts here - the first one extracts the data for the last 24 hours from the tables on the page, the second one uses the data from a linked json file which covers the previous three days.
 
 I'm going to keep the table one here mainly as a reference for myself and work on the json based one, as I think that can probably be gotten to do more interesting things.
 
