@@ -341,6 +341,5 @@ d3.json(jsonurl, function (json) {
     
 
 //try and add the forecast after the chart - if the URL works
-   $('<div id="import_forecast"></div>').load(forecast_url + ' .day.eve').insertBefore('.p-id');
-   $('<div id="import_forecast"></div>').load(forecast_url + ' .day.main').insertBefore('.p-id');
+   $('<div id="import_forecast"></div>').load(forecast_url + ' .day').insertBefore('.p-id');
 });
